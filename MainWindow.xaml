@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Geometry Creation (2D)" Height="450" Width="800">
     <Grid Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="0,0,3.333,1.667">
-        <TextBox x:Name="textBox1" IsReadOnly="True" Margin="205,0,10,30" TextWrapping="Wrap" Text="Status messages will be displayed here..." UndoLimit="99" Background="#FF090909" Foreground="#FFF8F6F6" FontFamily="Courier New" BorderThickness="8" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" MinWidth="500" MinHeight="380" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        <TextBox x:Name="textBox1" IsReadOnly="True" Margin="205,0,10,30" TextWrapping="Wrap" Text="Status messages will be displayed here..." UndoLimit="99" Background="#FF090909" Foreground="#FFF8F6F6" FontFamily="Courier New" BorderThickness="8" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" MinWidth="500" MinHeight="380" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" TextChanged="textBox1_TextChanged_1"/>
         <Button Content="Create Geometry" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" Width="106" RenderTransformOrigin="7.953,2" Click="CreateGeometryButton_Click" VerticalContentAlignment="Center" Padding="1" FontWeight="Bold">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -19,17 +19,17 @@
             </Button.RenderTransform>
         </Button>
         <Label Content="Domain Type:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
-        <RadioButton Content="Rectangle" HorizontalAlignment="Left" Margin="7,30,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Triangle" HorizontalAlignment="Left" Margin="94,30,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="Rectangle" HorizontalAlignment="Left" Margin="7,30,0,0" VerticalAlignment="Top" Checked="RectangleRadioButton_Checked"/>
+        <RadioButton Content="Triangle" HorizontalAlignment="Left" Margin="94,30,0,0" VerticalAlignment="Top" Checked="TriangleRadioButton_Checked"/>
         <Label Content="Geometrical Parameters:" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Length" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="60"/>
         <Label Content="Height" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="60"/>
         <Label Content="NX" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="60"/>
         <Label Content="NY" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="70,87,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="70,114,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="70,140,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="70,166,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="LengthTextBox" HorizontalAlignment="Left" Height="18" Margin="70,87,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113" GotFocus="LengthTextBox_GotFocus"/>
+        <TextBox x:Name="HeightTextBox" HorizontalAlignment="Left" Height="18" Margin="70,114,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113" GotFocus="HeightTextBox_GotFocus"/>
+        <TextBox x:Name="NXTextBox" HorizontalAlignment="Left" Height="18" Margin="70,140,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113" GotFocus="NXTextBox_GotFocus"/>
+        <TextBox x:Name="NYTextBox" HorizontalAlignment="Left" Height="18" Margin="70,166,0,0" TextWrapping="Wrap" Text="&lt;Enter value here&gt;" VerticalAlignment="Top" Width="113" GotFocus="NYTextBox_GotFocus"/>
 
     </Grid>
 </Window>
