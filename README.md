@@ -16,4 +16,4 @@ https://docs.microsoft.com/en-us/visualstudio/ide/step-1-create-a-windows-forms-
 3. Start exploring files "MainWindow.xaml" [Design view] and double click over button (in design) to view source code (.xaml.cs).
 
 # Snapshot
-![LaunchingCmdCapture](Img/ApplicationDesign.JPG "EXE ScreenShot")
+![LaunchingCmdCapture](Img/WPFAppDesign.JPG "EXE ScreenShot")
