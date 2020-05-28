@@ -1,4 +1,4 @@
-# LaunchCmd
+# WPF Application creation
 This project is to demonstrate how to create a simple windows application using WPF (C#).
 
 # Application
