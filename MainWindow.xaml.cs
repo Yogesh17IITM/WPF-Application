@@ -35,26 +35,62 @@ namespace WpfApp1
         }
 
         private void CreateGeometryButton_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            // Display Input Details
+            textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + "[INPUT] Geometrical Params: ";
+            textBox1.Text += System.Environment.NewLine + "Length = " + LengthTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "Height = " + HeightTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "NX = " + NXTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "NY = " + NYTextBox.Text;
+
+            // Start Process
             Proc = Process.Start(psi);
             Proc.StandardInput.WriteLine(@"f:");
             Proc.StandardInput.WriteLine(@"dir");
             Proc.StandardInput.WriteLine(@"exit");
-            textBox1.Text += Proc.StandardOutput.ReadToEnd();
-        }
-        
-        private void RunButton_Click(object sender, RoutedEventArgs e)
-        { 
-        }
+            textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + Proc.StandardOutput.ReadToEnd();
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+            // TODO: after displaying WRITE INPUTS to a file
+            // In C++ side, read inputs and execute
+        }
+               
+        private void RectangleRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
+            textBox1.Text = "[MESSAGE] Rectangle has been selected !";
         }       
+
+        private void TriangleRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            textBox1.Text = "[MESSAGE] Triangle has been selected !";
+        }
+
+        private void textBox1_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            // Currently in READ-ONLY mode
+        }
+                
+        public void LengthTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {            
+            LengthTextBox.Text = string.Empty;
+            LengthTextBox.GotFocus -= LengthTextBox_GotFocus;
+        }
+
+        public void HeightTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            HeightTextBox.Text = string.Empty;
+            HeightTextBox.GotFocus -= HeightTextBox_GotFocus;
+        }
+
+        public void NXTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            NXTextBox.Text = string.Empty;
+            NXTextBox.GotFocus -= NXTextBox_GotFocus;
+        }
+
+        public void NYTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            NYTextBox.Text = string.Empty;
+            NYTextBox.GotFocus -= NYTextBox_GotFocus;
+        }
     }
 }

@@ -7,7 +7,7 @@ Create geometry by getting user inputs
 # Pre-requistite(s):
 VS2019 (With WPF installed)
 
-##Refer (for installation guidance): 
+#Refer (for installation guidance): 
 https://docs.microsoft.com/en-us/visualstudio/ide/step-1-create-a-windows-forms-application-project?view=vs-2019
 
 # Directions to explore:
