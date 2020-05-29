@@ -18,4 +18,4 @@ https://docs.microsoft.com/en-us/visualstudio/ide/step-1-create-a-windows-forms-
 5. Run WpfApp1.exe in bin\Debug folder.
 
 # Snapshot
-![LaunchingCmdCapture](Img/WPFAppDesign1.JPG "EXE ScreenShot")
+![LaunchingCmdCapture](Img/WPFAppDesign.JPG "EXE ScreenShot")
