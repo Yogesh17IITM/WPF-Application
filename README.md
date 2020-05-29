@@ -14,6 +14,8 @@ https://docs.microsoft.com/en-us/visualstudio/ide/step-1-create-a-windows-forms-
 1. Clone this repository in your local machine.
 2. Double click on the "WpfApp1.sln" and open in Visual Studio.
 3. Start exploring files "MainWindow.xaml" [Design view] and double click over button (in design) to view source code (.xaml.cs).
+4. Create a new folder "Input" in My Documents 
+5. Run WpfApp1.exe in bin\Debug folder.
 
 # Snapshot
 ![LaunchingCmdCapture](Img/WPFAppDesign.JPG "EXE ScreenShot")
