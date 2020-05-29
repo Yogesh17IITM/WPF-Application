@@ -35,45 +35,54 @@ namespace WpfApp1
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardInput = true;
             psi.CreateNoWindow = true;
-            RectangleRB.IsChecked = true;   // Default selection - Rectangle
-            DomainType = "Rectangle";
+            RectangleRB.IsChecked = true;   // Default selection - Rectangle            
         }
 
         private void CreateGeometryButton_Click(object sender, RoutedEventArgs e)
         {
             // Display Input Details
             #region Displaying Input details 
-            textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + "[INPUT] Geometrical Params: ";
-            textBox1.Text += System.Environment.NewLine + "Bottom-Left Point = (" + BLXTextBox.Text + ","+ BLYTextBox.Text + ")";
-            textBox1.Text += System.Environment.NewLine + "Top-Right Point = (" + TRXTextBox.Text + "," + TRYTextBox.Text + ")";            
-            textBox1.Text += System.Environment.NewLine + "NX = " + NXTextBox.Text;
-            textBox1.Text += System.Environment.NewLine + "NY = " + NYTextBox.Text;
-            #endregion
-
-            // Start Process
-            #region Starting Command Process
-            Proc = Process.Start(psi);
-            Proc.StandardInput.WriteLine(@"f:");
-            Proc.StandardInput.WriteLine(@"dir");
-            Proc.StandardInput.WriteLine(@"exit");
-            textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + Proc.StandardOutput.ReadToEnd();
+            textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + "[INPUT]";
+            textBox1.Text += System.Environment.NewLine + "Geometrical Params:";
+            textBox1.Text += System.Environment.NewLine + "\tBottom-Left Point = (" + BLXTextBox.Text + ","+ BLYTextBox.Text + ")";
+            textBox1.Text += System.Environment.NewLine + "\tTop-Right Point = (" + TRXTextBox.Text + "," + TRYTextBox.Text + ")";            
+            textBox1.Text += System.Environment.NewLine + "\tNX = " + NXTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "\tNY = " + NYTextBox.Text;
             #endregion
 
             // Writing Inputs to a File   
             #region Writing Inputs to File
+            textBox1.Text += System.Environment.NewLine;
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);                        
             string strDomainType = DomainType + Environment.NewLine;
             File.WriteAllText(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), strDomainType);
             string[] lines = { BLXTextBox.Text, BLYTextBox.Text, TRXTextBox.Text, TRYTextBox.Text, NXTextBox.Text, NYTextBox.Text };
             File.AppendAllLines(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), lines);
+            textBox1.Text += System.Environment.NewLine + "File created successfully !!!";
+            #endregion
+
+            // Start Process
+            #region Starting Command Process
+            //Proc = Process.Start(psi);
+            //Proc.StandardInput.WriteLine(@"f:");
+            //Proc.StandardInput.WriteLine(@"dir");
+            //Proc.StandardInput.WriteLine(@"exit");
+            //textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + Proc.StandardOutput.ReadToEnd();
             #endregion
 
             // Start Create Geometry .exe
+            #region Launching application
+            textBox1.Text += System.Environment.NewLine;
+            textBox1.Text += System.Environment.NewLine + "Creating Geometry...";
+            // TODO: Launch your .exe application here.
+            #endregion
         }
 
         private void RectangleRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            textBox1.Text = "[MESSAGE] "+ DomainType + " has been selected !";            
+            DomainType = "Rectangle";
+            textBox1.Text = "[MESSAGE] " + System.Environment.NewLine;
+            textBox1.Text += DomainType + " has been selected !";            
         }       
 
         private void TriangleRadioButton_Checked(object sender, RoutedEventArgs e)
