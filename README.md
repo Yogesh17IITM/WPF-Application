@@ -21,5 +21,6 @@ https://docs.microsoft.com/en-us/visualstudio/ide/step-1-create-a-windows-forms-
 ![LaunchingCmdCapture](Img/WPFAppDesign1.JPG "EXE ScreenShot")
 
 # View Output(s)
-Now you can view output results graphically by directly pressing "Launch Paraview" button
+Now you can view output results graphically by directly pressing "Launch Paraview" button.
+
 ![LaunchingParaview](Img/LaunchingParaview.JPG "Paraview ScreenShot")
