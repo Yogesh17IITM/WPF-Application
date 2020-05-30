@@ -8,8 +8,8 @@
         Title="Geometry Creation (2D)" Height="450" Width="800">
     <Grid x:Name="MainGrid" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="0,0,3.333,1.667">
         <TextBox x:Name="textBox1" IsReadOnly="True" Margin="205,0,10,30" TextWrapping="Wrap" Text="Status messages will be displayed here..." UndoLimit="99" Background="#FF090909" Foreground="#FFF8F6F6" FontFamily="Courier New" BorderThickness="8" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" MinWidth="500" MinHeight="380" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" TextChanged="textBox1_TextChanged_1"/>
-        <Button Content="Create Geometry" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" Width="106" RenderTransformOrigin="7.953,2" Click="CreateGeometryButton_Click" VerticalContentAlignment="Center" Padding="1" FontWeight="Bold">
-        </Button>
+        <Button Content="Create Geometry" HorizontalAlignment="Right" Margin="0,0,126,5" VerticalAlignment="Bottom" Width="106" RenderTransformOrigin="7.953,2" Click="CreateGeometryButton_Click" VerticalContentAlignment="Center" Padding="1" FontWeight="Bold"/>
+        <Button Content="Launch Paraview" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" Width="106" RenderTransformOrigin="7.953,2" Click="LaunchParaviewButton_Click" VerticalContentAlignment="Center" Padding="1" FontWeight="Bold"/>
         <Grid x:Name="DomainTypeGrid" Height="56" Margin="3,0,622,0" VerticalAlignment="Top">
             <Label Content="Domain Type:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
             <RadioButton x:Name="RectangleRB" Content="Rectangle" HorizontalAlignment="Left" Margin="7,30,0,0" VerticalAlignment="Top" Checked="RectangleRadioButton_Checked"/>

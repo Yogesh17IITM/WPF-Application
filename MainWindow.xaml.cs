@@ -22,20 +22,17 @@ namespace WpfApp1
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        // TODO: Launch My Application instead of cmd (May be through .bat)
-        private ProcessStartInfo psi = new ProcessStartInfo("cmd");
-        private Process Proc;
+    {        
+        
         private string DomainType;
 
         public MainWindow()
         {
-            InitializeComponent();
-            psi.UseShellExecute = false;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardInput = true;
-            psi.CreateNoWindow = true;
+            InitializeComponent();                     
+
+            #region Setting default variables
             RectangleRB.IsChecked = true;   // Default selection - Rectangle            
+            #endregion
         }
 
         private void CreateGeometryButton_Click(object sender, RoutedEventArgs e)
@@ -58,11 +55,17 @@ namespace WpfApp1
             File.WriteAllText(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), strDomainType);
             string[] lines = { BLXTextBox.Text, BLYTextBox.Text, TRXTextBox.Text, TRYTextBox.Text, NXTextBox.Text, NYTextBox.Text };
             File.AppendAllLines(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), lines);
-            textBox1.Text += System.Environment.NewLine + "File created successfully !!!";
+            textBox1.Text += System.Environment.NewLine + "[SUCCESS] File created successfully !!!";
             #endregion
 
-            // Start Process
+            // Start Command Process
             #region Starting Command Process
+            //private ProcessStartInfo psi = new ProcessStartInfo("cmd");   // To launch cmd.exe
+            //psi.UseShellExecute = false;
+            //psi.RedirectStandardOutput = true;
+            //psi.RedirectStandardInput = true;
+            //psi.CreateNoWindow = true;
+            //private Process Proc;
             //Proc = Process.Start(psi);
             //Proc.StandardInput.WriteLine(@"f:");
             //Proc.StandardInput.WriteLine(@"dir");
@@ -70,11 +73,16 @@ namespace WpfApp1
             //textBox1.Text += System.Environment.NewLine + System.Environment.NewLine + Proc.StandardOutput.ReadToEnd();
             #endregion
 
-            // Start Create Geometry .exe
+            // Launch Create Geometry .exe
             #region Launching application
             textBox1.Text += System.Environment.NewLine;
             textBox1.Text += System.Environment.NewLine + "Creating Geometry...";
-            // TODO: Launch your .exe application here.
+            Process Proc = Process.Start(@"E:\GitHub\FluidSimulation\CreatingInterfaceGitHub\GeometryCreation\Geometry\Debug\Geometry.exe");
+            textBox1.Text += System.Environment.NewLine;
+            textBox1.Text += System.Environment.NewLine + "[SUCCESS] Geometry Created Successfully!!!";
+            textBox1.Text += System.Environment.NewLine;
+            textBox1.Text += System.Environment.NewLine + "Please check the following directory:";
+            textBox1.Text += System.Environment.NewLine + "Path: Documents\\Output\\";
             #endregion
         }
 
@@ -88,7 +96,8 @@ namespace WpfApp1
         private void TriangleRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             DomainType = "Triangle";
-            textBox1.Text = "[MESSAGE] " + DomainType + " has been selected !";
+            textBox1.Text = "[MESSAGE] " + System.Environment.NewLine;
+            textBox1.Text += DomainType + " has been selected !";
         }
 
         private void textBox1_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -130,6 +139,35 @@ namespace WpfApp1
         {
             TRYTextBox.Text = string.Empty;
             TRYTextBox.GotFocus -= TRYTextBox_GotFocus;
+        }
+
+        private void LaunchParaviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            textBox1.Text += System.Environment.NewLine;
+            textBox1.Text += System.Environment.NewLine + "Launching Paraview...";
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = @"C:\Program Files\ParaView 5.3.0-Qt5-OpenGL2-Windows-64bit\bin\paraview.exe";            
+            startInfo.Arguments = @"C:\Users\YOGESH\Documents\Output\InitialStateOfParticles.csv";
+            Process.Start(startInfo);   // Do not wait for the user to exit application.
+                                        // Since it enables to work parallely. 
+
+            #region Error Handling
+            //try
+            //{                
+            //    // Start the process with the info we specified.
+            //    // Call WaitForExit and then the using statement will close.
+            //    using (Process exeProcess = Process.Start(startInfo))
+            //    {
+            //        exeProcess.WaitForExit();
+            //    }
+            //}
+            //catch
+            //{
+            //    // Log error.
+            //}
+            #endregion
+            textBox1.Text += System.Environment.NewLine;
+            textBox1.Text += System.Environment.NewLine + "Closing Paraview successful !!!";
         }
     }
 }
