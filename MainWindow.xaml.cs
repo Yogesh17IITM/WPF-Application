@@ -165,9 +165,12 @@ namespace WpfApp1
             //{
             //    // Log error.
             //}
+
+            // Display this message once paraview is closed
+            //textBox1.Text += System.Environment.NewLine;
+            //textBox1.Text += System.Environment.NewLine + "Closing Paraview successful !!!";
             #endregion
-            textBox1.Text += System.Environment.NewLine;
-            textBox1.Text += System.Environment.NewLine + "Closing Paraview successful !!!";
+
         }
     }
 }
