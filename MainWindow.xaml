@@ -36,10 +36,10 @@
             </Grid>
             <Grid x:Name="GridParamsGrid" Height="93" Margin="8,152,20,0" VerticalAlignment="Top">
                 <Label Content="b. Grid Parameters" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="150"/>
-                <Label Content="NX" HorizontalAlignment="Left" Margin="18,25,0,0" VerticalAlignment="Top" Width="36"/>
-                <TextBox x:Name="NXTextBox" HorizontalAlignment="Left" Height="25" Margin="54,26,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" GotFocus="NXTextBox_GotFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label Content="NY" HorizontalAlignment="Left" Margin="18,57,0,0" VerticalAlignment="Top" Width="36"/>
-                <TextBox x:Name="NYTextBox" HorizontalAlignment="Left" Height="25" Margin="54,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" GotFocus="NYTextBox_GotFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="dx" HorizontalAlignment="Left" Margin="18,25,0,0" VerticalAlignment="Top" Width="36"/>
+                <TextBox x:Name="DXTextBox" HorizontalAlignment="Left" Height="25" Margin="54,26,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" GotFocus="DXTextBox_GotFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="dy" HorizontalAlignment="Left" Margin="18,57,0,0" VerticalAlignment="Top" Width="36"/>
+                <TextBox x:Name="DYTextBox" HorizontalAlignment="Left" Height="25" Margin="54,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" GotFocus="DYTextBox_GotFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
         </Grid>
     </Grid>

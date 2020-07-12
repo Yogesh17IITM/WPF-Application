@@ -43,8 +43,8 @@ namespace WpfApp1
             textBox1.Text += System.Environment.NewLine + "Geometrical Params:";
             textBox1.Text += System.Environment.NewLine + "\tBottom-Left Point = (" + BLXTextBox.Text + ","+ BLYTextBox.Text + ")";
             textBox1.Text += System.Environment.NewLine + "\tTop-Right Point = (" + TRXTextBox.Text + "," + TRYTextBox.Text + ")";            
-            textBox1.Text += System.Environment.NewLine + "\tNX = " + NXTextBox.Text;
-            textBox1.Text += System.Environment.NewLine + "\tNY = " + NYTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "\tdx = " + DXTextBox.Text;
+            textBox1.Text += System.Environment.NewLine + "\tdy = " + DYTextBox.Text;
             #endregion
 
             // Writing Inputs to a File   
@@ -53,7 +53,7 @@ namespace WpfApp1
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);                        
             string strDomainType = DomainType + Environment.NewLine;
             File.WriteAllText(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), strDomainType);
-            string[] lines = { BLXTextBox.Text, BLYTextBox.Text, TRXTextBox.Text, TRYTextBox.Text, NXTextBox.Text, NYTextBox.Text };
+            string[] lines = { BLXTextBox.Text, BLYTextBox.Text, TRXTextBox.Text, TRYTextBox.Text, DXTextBox.Text, DYTextBox.Text };
             File.AppendAllLines(Path.Combine(docPath, "Input/CreateGeometryInput.txt"), lines);
             textBox1.Text += System.Environment.NewLine + "[SUCCESS] File created successfully !!!";
             #endregion
@@ -105,16 +105,16 @@ namespace WpfApp1
             // Currently in READ-ONLY mode
         }
         
-        public void NXTextBox_GotFocus(object sender, RoutedEventArgs e)
+        public void DXTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            NXTextBox.Text = string.Empty;
-            NXTextBox.GotFocus -= NXTextBox_GotFocus;
+            DXTextBox.Text = string.Empty;
+            DXTextBox.GotFocus -= DXTextBox_GotFocus;
         }
 
-        public void NYTextBox_GotFocus(object sender, RoutedEventArgs e)
+        public void DYTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            NYTextBox.Text = string.Empty;
-            NYTextBox.GotFocus -= NYTextBox_GotFocus;
+            DYTextBox.Text = string.Empty;
+            DYTextBox.GotFocus -= DYTextBox_GotFocus;
         }
 
         private void BLXTextBox_GotFocus(object sender, RoutedEventArgs e)
